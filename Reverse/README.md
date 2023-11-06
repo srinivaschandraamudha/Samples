@@ -1,4 +1,4 @@
-# Source for reverseing a string in 2 ways
+# Source for reversing a string in 2 ways
 
 ## Reverses string completly see below example
         Example: input : "Hello World"
