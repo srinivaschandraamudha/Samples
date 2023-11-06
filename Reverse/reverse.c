@@ -1,6 +1,9 @@
 #include<stdio.h>
 #include<string.h>
 
+//display: Displays a given string till null termination.
+//Args:
+// ip: char pointer to input string to be displayed.
 void display(char *str)
 {
     printf("\n");
@@ -8,6 +11,9 @@ void display(char *str)
 		printf("%c", str[length]);
 }
 
+//display: Displays a given string till null termination.
+//Args:
+// ip: char pointer to input string to be displayed.
 int len(char *str)
 {
     int length = 0;
@@ -15,6 +21,11 @@ int len(char *str)
     return length;
 }
 
+//extract: Extracts first word from a given string. Determines
+// word once a space is encountered and stroes it in output char pointer.
+//Args:
+// ip: char pointer to input string where first word is extracted.
+// word: char pointer to output where first word is stored.
 void extract(char *ip, char *word)
 {    
     int i = 0;
@@ -28,18 +39,11 @@ void extract(char *ip, char *word)
     word[i] = '\0';
 }
 
-void insert(char *ip, char *op, char *word)
-{
-    int start_indx = len(ip) - len(op) - len(word);
-    printf("\nDEBUG Y: start_indx = %d; ip_len = %d ; op_len = %d; word_len = %d \n", start_indx,len(ip),len(op),len(word));
-    op[len(ip)] = '\0'; 
-    if(start_indx - 1 > 0)
-        op[start_indx - 1] = ' ';
-    for(int i = 0; '\0' != word[i]; i++)
-        op[start_indx + i] = word[i];
-    printf("\nDEBUG X: %s\n", &op[0]);
-}
 
+//reverse_words: Reverses a given string.
+//Args:
+// ip: char pointer to input string.
+// op: char pointer to output string.
 void reverse(char *ip, char *op)
 {
     int str_len = len(ip);
@@ -50,16 +54,18 @@ void reverse(char *ip, char *op)
     }
 }
 
+//reverse_words: Reverses the order of words in a given string and outputs them in op pointer.
+//Args:
+// ip: char pointer to input string.
+// op: char pointer to output string.    
 void reverse_words(char *ip, char *op)
 {
-    printf("\nDEBUG X: reverse_words \n\n\n");
     char output1[64];
     char temp[16];
     char temp_out[16];
     int str_len = len(ip);
     int temp_index = 0;
     reverse(ip, &output1[0]);
-    printf("\nDEBUG X: %s\n", &op[0]);
     int k = 0;
     for(int i = 0; i < str_len; i++)
     {
@@ -96,14 +102,15 @@ void reverse_words(char *ip, char *op)
 
 void main()
 {
-	//char input[64] = "This is a test";
-    char input[] = "How is this possible";
-    char output[64];
+	char input[64] = "This is a test";
     
+    char output[64];
+    printf("\n\nOrginal input:");
     display(&input[0]);
 	reverse(&input[0], &output[0]);
+    printf("\n\nReversing orginal input:");
     display(&output[0]);
     reverse_words(&input[0],&output[0]);
-    display(&output[0]);
-    
+    printf("\n\nReversing order of words in orginal input:");
+    display(&output[0]);    
 }

@@ -6,3 +6,7 @@
 ## Reverses order of words in a given string
         Example: input : "Hello World"
                  output: "World Hello"
+            
+## Output
+
+![Output](output.jpg)
