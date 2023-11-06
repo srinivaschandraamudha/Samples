@@ -102,7 +102,7 @@ void reverse_words(char *ip, char *op)
 
 void main()
 {
-	char input[64] = "This is a test";
+    char input[64] = "This is a test";
     
     char output[64];
     printf("\n\nOrginal input:");
