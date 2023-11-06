@@ -107,7 +107,7 @@ void main()
     char output[64];
     printf("\n\nOrginal input:");
     display(&input[0]);
-	reverse(&input[0], &output[0]);
+    reverse(&input[0], &output[0]);
     printf("\n\nReversing orginal input:");
     display(&output[0]);
     reverse_words(&input[0],&output[0]);
